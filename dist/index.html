@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="WebPartPageExpansion" content="full" />
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <title>Система управління ефективністю</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+<link href="main.css" rel="stylesheet"></head>
+
+<body>
+  <div class="container demo">
+    <div class="content">
+      <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+        <!--          <h1 class="main-title"><span class="thin">Explore</span> Space</h1> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="customTopHolder">
+      <a href="#" class="customLogo">
+        <img src="data:image/png;base64,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" alt="Back to Home" width="240" height="75">
+      </a>
+    </div>
+    <div class="customTopNavHolder">
+      <ul id="customTopNav">
+        <li>
+          <a href="https://www.ukrnafta.com/" class="customTopNavItem">Новини Компанії </a>
+        </li>
+        <li>
+          <a href="http://www.geonet.com/" class="customTopNavItem">Все для співробітників </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <main>
+    <div class="table-kpi grid">
+      <div class="kpi_photo5">
+        <a href="https://portal.ukrnafta.local/sites/kpi/SitePages/5.aspx" target="_blank">
+          <span>СИСТЕМА УПРАВЛІННЯ ЕФЕКТИВНІСТЮ РОБОТИ
+            <br/>PERFORMANCE MANAGEMENT SYSTEM</span>
+        </a>
+      </div>
+
+      <!--<div class="kpi_photo2">
+<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/2.aspx" target="_blank">
+<span >СТРАТЕГІЧНІ ПРІОРИТЕТИ 2018<br/>STRATEGIC PRIORITIES</span>			
+</a></div> -->
+
+      <div class="kpi_photo1">
+        <a href="https://portal.ukrnafta.local/sites/kpi/SitePages/1.aspx" target="_blank">
+          <span>ВСТАНОВЛЕННЯ КПЕ
+            <br/>KPIs SETTING</span>
+        </a>
+      </div>
+
+      <!--<div class="kpi_photo4">
+<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/4.aspx" target="_blank">
+<span >МОНІТОРИНГ ВИКОНАННЯ ПОКАЗНИКІВ<br/>PERFORMANCE MONITORING</span>			
+</a></div> -->
+
+      <div class="kpi_photo7">
+        <a href="https://portal.ukrnafta.local/sites/kpi/SitePages/7.aspx" target="_blank">
+          <span>ОЦІНКА РОБОТИ
+            <br/>PERFORMANCE APPRAISAL</span>
+        </a>
+      </div>
+
+      <div class="kpi_photo3">
+        <a href="https://portal.ukrnafta.local/sites/kpi/SitePages/3.aspx" target="_blank">
+          <span>ПРОЦЕС УПРАВЛІННЯ ЕФЕКТИВНІСТЮ
+            <br/>PERFORMANCE MANAGEMENT PROCESS</span>
+        </a>
+      </div>
+
+      <div class="kpi_photo6">
+        <a href="https://portal.ukrnafta.local/sites/kpi/SitePages/6.aspx" target="_blank">
+          <span>ПИТАННЯ, ЯКІ ЧАСТО ВИНИКАЮТЬ
+            <br/>FREQUENT ASK QUESTIONS (FAQ)</span>
+        </a>
+      </div>
+
+      <div class="kpi_photo9">
+        <a href="https://portal.ukrnafta.local/sites/kpi/SitePages/9.aspx" target="_blank">
+          <span>ІНФОРМАЦІЙНИЙ БЛОК
+            <br/>INFO DESK</span>
+        </a>
+      </div>
+      <!--</form>  -->
+    </div>
+  </main>
+  <footer>
+    <div class="customFooterStripe"></div>
+
+
+    <div class="customFooterHolder">
+      <div class="customFooterLeft">
+        © Copyright 2017 Ukrnafta &nbsp;|&nbsp; All Rights Reserved.
+      </div>
+      <div class="customFooterRight">
+        <a href="https://www.ukrnafta.com/ru/pro-kompaniyu">About Us</a> &nbsp;|
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+<script type="text/javascript" src="./TweenLite.min.js"></script>
+
+<script type="text/javascript" src="./EasePack.min.js"></script>
+<script type="text/javascript" src="./demo.js"></script>
+
+
+<!-- <script language="javascript" type="text/javascript" src="https://portal.ukrnafta.local/sites/kpi/SiteAssets/js/snow.js"></script> -->
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
