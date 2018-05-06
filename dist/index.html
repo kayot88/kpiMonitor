@@ -108,11 +108,47 @@
   </footer>
   </div>
 
-<script type="text/javascript" src="./TweenLite.min.js"></script>
+<div class="project" style="perspective: 1000px; transform-style: preserve-3d;">
+  <div class="project__card" style="perspective: 1000px; transform-style: preserve-3d; transform: rotateX(0deg) rotateY(0deg);">
+    <a href="" class="project__image">
+<img src="https://voodoorobotics.com/wp-content/uploads/2017/12/blog-measure-warehouse-efficiency.jpg" width="600" height="400"
+  alt="">
 
+    </a>
+    <div class="project__detail">
+      <h2 class="project__title">
+<a href="#">ВСТАНОВЛЕННЯ КПЕ</a>
+
+      </h2>
+      <small class="project__category">
+<a href="#">KPIs SETTING</a>
+
+      </small>
+    </div>
+  </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="./TweenLite.min.js"></script>
 <script type="text/javascript" src="./EasePack.min.js"></script>
 <script type="text/javascript" src="./demo.js"></script>
+<script src="./js/jquery.hover3d.js"></script>
 
+<script>
+  $(document).ready(function () {
+    $(".project").hover3d({
+      selector: ".project__card"
+    });
+
+    $(".movie").hover3d({
+      selector: ".movie__card",
+      shine: true,
+      sensitivity: 20,
+    });
+  });
+
+</script>
 
 <!-- <script language="javascript" type="text/javascript" src="https://portal.ukrnafta.local/sites/kpi/SiteAssets/js/snow.js"></script> -->
 <script type="text/javascript" src="main.js"></script></body>

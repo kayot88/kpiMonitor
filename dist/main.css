@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Karla:400,700);
 @charset "UTF-8";
 .large-header {
   margin-top: 110px;
@@ -18,53 +19,15 @@
   font-size: 4.2em;
   letter-spacing: 0.1em; }
 
-/******************/
 .header {
   z-index: 1;
   position: relative; }
 
-/******************/
 .customTopHolder {
   background-color: #003366;
   width: auto;
   height: 80px;
   padding: 0px 33px; }
-
-.grid {
-  /*display: grid;*/
-  display: block;
-  max-width: 1100px;
-  /*grid-template-columns: 1fr 1fr 1fr;*/
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: stretch;
-      align-items: stretch;
-  /*  grid-row-gap: 10px;
-    grid-column-gap: 5px;	*/
-  font-size: 0; }
-
-.table-kpi {
-  z-index: 1;
-  position: relative;
-  /*max-width: auto;*/
-  height: auto;
-  margin: auto;
-  margin-top: 100px;
-  padding: 0;
-  text-align: center;
-  margin: auto;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  font-family: 'Arial Bold', sans-serif;
-  border-collapse: separate;
-  border-spacing: 5px;
-  background: #fff;
-  color: #656665;
-  border: 2px solid #2a69fc;
-  border-radius: 5px;
-  font-size: 0; }
 
 .customLogo {
   position: relative;
@@ -107,6 +70,175 @@ a.customTopNavItem:hover {
   text-decoration: none;
   background-color: white;
   color: #403a35; }
+
+.customFooterStripe {
+  z-index: 1;
+  position: relative;
+  background-color: #ffed00;
+  /*margin-top:50px;*/
+  margin: auto 0 0 0;
+  width: auto;
+  height: 7px;
+  padding: 0px 35px;
+  margin-top: 250px; }
+
+.customFooterHolder {
+  z-index: 1;
+  position: relative;
+  background-color: #003366;
+  width: auto;
+  /*height: auto;*/
+  color: #d1d1d1;
+  font-size: 14px;
+  padding: 25px 35px;
+  /*margin-top: 250px;*/
+  margin-bottom: 0px; }
+
+.customFooterHolder a {
+  color: #d1d1d1; }
+
+.customFooterLeft {
+  float: left; }
+
+.customFooterIcons {
+  z-index: 1;
+  position: relative;
+  padding-bottom: 3px; }
+
+.customFooterRight {
+  float: right; }
+
+body {
+  line-height: 1.8;
+  color: #666; }
+
+.project {
+  width: 300px;
+  float: left;
+  padding: 15px; }
+  .project-list:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .project__image {
+    display: block;
+    position: relative; }
+    .project__image img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block; }
+    .project__image:after {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+      transition: opacity .3s ease;
+      opacity: 0; }
+  .project__card {
+    background-color: silver;
+    position: relative;
+    transition: box-shadow .3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0); }
+    .project__card.hover-in {
+      transition: transform .2s ease-out; }
+    .project__card.hover-out {
+      transition: transform .2s ease-in; }
+  .project:hover .project__card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+  .project:hover .project__image {
+    opacity: 0; }
+    .project:hover .project__image :after {
+      opacity: 1; }
+  .project:hover .project__detail {
+    border-width: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+  .project:hover .project__title, .project:hover .project__category {
+    transform: translateY(0) scale(1);
+    opacity: 1; }
+  .project:hover .project__title {
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 1; }
+  .project__detail {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    text-align: center;
+    transform: translateZ(30px);
+    border: 0 solid #00BCD4;
+    transition: border .4s ease; }
+  .project__title {
+    font-family: karla, sans-serif;
+    margin: 0 0 10px;
+    font-size: 25px;
+    font-weight: 700;
+    transition: .4s ease;
+    opacity: 0;
+    transform: translateY(40px) scale(0);
+    will-change: transform; }
+    .project__title a {
+      color: black; }
+  .project__category {
+    opacity: 0;
+    transition: .4s ease;
+    transition-delay: .1s;
+    transform: translateY(40px) scale(0);
+    will-change: transform; }
+    .project__category a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.3em; }
+
+a {
+  text-decoration: none;
+  color: #9999ff; }
+
+.grid {
+  /*display: grid;*/
+  display: block;
+  max-width: 1100px;
+  /*grid-template-columns: 1fr 1fr 1fr;*/
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+  /*  grid-row-gap: 10px;
+    grid-column-gap: 5px;	*/
+  font-size: 0; }
+
+.table-kpi {
+  z-index: 1;
+  position: relative;
+  /*max-width: auto;*/
+  height: auto;
+  margin: auto;
+  margin-top: 100px;
+  padding: 0;
+  text-align: center;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-family: 'Arial Bold', sans-serif;
+  border-collapse: separate;
+  border-spacing: 5px;
+  background: #fff;
+  color: #656665;
+  border: 2px solid #2a69fc;
+  border-radius: 5px;
+  font-size: 0; }
 
 .kpi_photo1 a {
   display: inline-block;
@@ -357,41 +489,4 @@ a.customTopNavItem:hover {
   /*  border: 1px solid #666666;
 	padding: 10px;*/
   background: #003366; }
-
-.customFooterStripe {
-  z-index: 1;
-  position: relative;
-  background-color: #ffed00;
-  /*margin-top:50px;*/
-  margin: auto 0 0 0;
-  width: auto;
-  height: 7px;
-  padding: 0px 35px;
-  margin-top: 250px; }
-
-.customFooterHolder {
-  z-index: 1;
-  position: relative;
-  background-color: #003366;
-  width: auto;
-  /*height: auto;*/
-  color: #d1d1d1;
-  font-size: 14px;
-  padding: 25px 35px;
-  /*margin-top: 250px;*/
-  margin-bottom: 0px; }
-
-.customFooterHolder a {
-  color: #d1d1d1; }
-
-.customFooterLeft {
-  float: left; }
-
-.customFooterIcons {
-  z-index: 1;
-  position: relative;
-  padding-bottom: 3px; }
-
-.customFooterRight {
-  float: right; }
 
